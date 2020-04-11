@@ -77,7 +77,7 @@
 <svelte:window on:keypress={handleKeydown} on:keyup={handleKeyup}/>
 
 <main>
-  <timer>{formatTime(timer, precision)}</timer>
+  <timer class:dim={thresholdTimer}>{formatTime(timer, precision)}</timer>
   <bottom>
     <values>
       <value>
@@ -107,6 +107,10 @@
     width: 100%;
     text-align: center;
 	}
+
+  .dim {
+    color: #868686;
+  }
 
   bottom {
   }
