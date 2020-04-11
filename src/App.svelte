@@ -62,7 +62,16 @@
     return `${seconds}.${(milliseconds + "0").substr(0,
         precision)}`
   }
-  
+
+  function getPB(times) {
+    if (times.length === 0) {
+      return '-'
+    } else {
+      const pb = times.reduce((prev, curr) => curr.time < prev ? curr.time : prev , Infinity);
+      return formatTime(pb, 3);
+    }
+  }
+
 </script>
 
 <svelte:window on:keypress={handleKeydown} on:keyup={handleKeyup}/>
