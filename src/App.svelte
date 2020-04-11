@@ -50,6 +50,8 @@
           thresholdTimer = 0;
           startTime = new Date();
           runTimer()
+        } else {
+          thresholdTimer = 0;
         }
       }
     }
