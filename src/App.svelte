@@ -3,7 +3,7 @@
 
   let times = localStorage.getItem('times') || [];
 
-  let precision = 3;
+  let precision = 2;
   let timerID = 0;
   let timer = new Date(0);
   let startTime = new Date();
@@ -30,7 +30,7 @@
           times = [...times, { time: timer }]
           clearTimeout(timerID);
           timerID = 0;
-          precision = 3;
+          precision = 2;
         }
       } else {
         const now = new Date();
