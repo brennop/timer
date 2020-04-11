@@ -77,6 +77,7 @@
 <svelte:window on:keypress={handleKeydown} on:keyup={handleKeyup}/>
 
 <main>
+  <scramble></scramble>
   <timer class:dim={thresholdTimer}>{formatTime(timer, precision)}</timer>
   <bottom>
     <values>
@@ -94,11 +95,24 @@
 </main>
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
+	:global(body) {
+    padding: 0;
+	}
+
 	main {
     font-family: Roboto Mono, monospace;
     margin: auto;
 		padding: 1em;
 		max-width: 320px;
+  
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 	}
 
 	timer {
