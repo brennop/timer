@@ -1,6 +1,8 @@
 <script>
   import "typeface-roboto-mono";
 
+  let times = localStorage.getItem('times') || [];
+
   let precision = 3;
   let timerID = 0;
   let timer = new Date(0);
@@ -22,8 +24,10 @@
         if(!timerID) {
           thresholdTimer = new Date();
         } else {
+          // stop timer
           const current = new Date()
           timer = new Date(current - startTime);
+          times = [...times, { time: timer }]
           clearTimeout(timerID);
           timerID = 0;
           precision = 3;
