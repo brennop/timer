@@ -79,12 +79,16 @@
 <main>
   <timer>{formatTime(timer, precision)}</timer>
   <bottom>
-    <div>
-      PB
-    </div>
-    <div>
-      ao5
-    </div>
+    <values>
+      <value>
+        <name>PB</name>
+        {getPB(times)}
+      </value>
+      <value>
+      <name>ao5</name>
+      -
+      </value>
+    </values>
     <history></history>
   </bottom>
 </main>
@@ -94,15 +98,30 @@
     font-family: Roboto Mono, monospace;
     margin: auto;
 		padding: 1em;
-		max-width: 400px;
+		max-width: 320px;
 	}
 
 	timer {
-		font-size: 4em;
+		font-size: 5em;
     text-align: center;
 	}
 
   bottom {
+  }
+
+  values {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  value {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  value name {
+    font-size: 1.4em;
   }
 
   history {
