@@ -61,8 +61,7 @@
     const seconds = time.getSeconds();
     const milliseconds = time.getMilliseconds();
     
-    return `${seconds}.${(milliseconds + "0").substr(0,
-        precision)}`
+    return `${seconds}${(milliseconds / 1000).toFixed(precision).substr(1)}`;
   }
 
   function getPB(times) {
