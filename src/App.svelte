@@ -103,6 +103,8 @@
 
 	timer {
 		font-size: 5em;
+    display: block;
+    width: 100%;
     text-align: center;
 	}
 
