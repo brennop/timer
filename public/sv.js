@@ -1,6 +1,6 @@
 self.addEventListener("install", function(e) {
   e.waitUntil(
-    caches.open("airhorner").then(function(cache) {
+    caches.open("cube-timer").then(function(cache) {
       return cache.addAll([
         "/",
         "/global.css",
