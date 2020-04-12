@@ -19,11 +19,9 @@
     const current = new Date()
     timer = new Date(current - startTime);
     timerID = setTimeout(runTimer, 100)
-     
   }
 
-  function handleKeydown({key}) {
-    if(key === ' ') {
+  function startTimer() {
       if(thresholdTimer === 0) {
         if(!timerID) {
           thresholdTimer = new Date();
@@ -43,11 +41,9 @@
           timer = new Date(0);
         }
       }
-    }
   }
 
-  function handleKeyup({key}) {
-    if(key === ' ') {
+  function stopTimer() {
       if(thresholdTimer !== 0) {
         const now = new Date();
         if(now - thresholdTimer > threshold) {
@@ -59,6 +55,17 @@
           thresholdTimer = 0;
         }
       }
+  }
+
+  function handleKeydown({key}) {
+    if(key === ' ') {
+      startTimer()
+    }
+  }
+
+  function handleKeyup({key}) {
+    if(key === ' ') {
+      stopTimer()
     }
   }
 
