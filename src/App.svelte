@@ -90,7 +90,21 @@
         (prev, curr) => (curr.time < prev ? curr.time : prev),
         Infinity
       );
-      return formatTime(pb, 3);
+      return formatTime(pb, 2);
+    }
+  }
+
+  function getAO(times, n) {
+    if (times.length < n) {
+      return "-";
+    } else {
+      const tail = times.map(t => t.time.getMilliseconds()).slice(-n)
+      const high = Math.max(...tail);
+      const low = Math.min(...tail);
+      const filtered = tail.filter(t => t !== high && t !== low);
+      const avg = filtered.reduce((acc, curr) => acc + curr) / n;
+      const ao = new Date(avg)
+      return formatTime(ao, 2);
     }
   }
 </script>
@@ -160,7 +174,7 @@
     </value>
     <value>
       <name>ao5</name>
-      -
+      {getAO(times, 5)}
     </value>
   </bottom>
 </main>
