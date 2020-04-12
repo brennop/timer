@@ -142,7 +142,11 @@
   }
 </style>
 
-<svelte:window on:keypress={handleKeydown} on:keyup={handleKeyup} />
+<svelte:window
+  on:keypress={handleKeydown}
+  on:keyup={handleKeyup}
+  on:touchstart={startTimer}
+  on:touchend={stopTimer} />
 
 <main>
   <scramble>{scramble}</scramble>
