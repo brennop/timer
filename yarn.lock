@@ -385,7 +385,7 @@ color@^3.0.0:
     color-convert "^1.9.1"
     color-string "^1.5.2"
 
-commander@^2.20.0:
+commander@^2.20.0, commander@^2.3.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
@@ -2138,6 +2138,13 @@ sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
+
+scrambo@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/scrambo/-/scrambo-0.3.0.tgz#0334b4ef0c7ffcd0b7d85fd1a67d89b0b7fb204f"
+  integrity sha1-AzS07wx//NC32F/Rpn2JsLf7IE8=
+  dependencies:
+    commander "^2.3.0"
 
 serialize-javascript@^2.1.2:
   version "2.1.2"

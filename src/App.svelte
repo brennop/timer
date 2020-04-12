@@ -1,5 +1,9 @@
 <script>
   import "typeface-roboto-mono";
+  import Scrambo from "scrambo"
+
+  const scrambo = new Scrambo();
+  let scramble = scrambo.get();
 
   let times = localStorage.getItem('times') || [];
 
@@ -31,6 +35,7 @@
           clearTimeout(timerID);
           timerID = 0;
           precision = 2;
+          scramble = scrambo.get()
         }
       } else {
         const now = new Date();
@@ -78,7 +83,7 @@
 <svelte:window on:keypress={handleKeydown} on:keyup={handleKeyup}/>
 
 <main>
-  <scramble></scramble>
+  <scramble>{scramble}</scramble>
   <timer class:dim={thresholdTimer}>{formatTime(timer, precision)}</timer>
   <bottom>
     <values>
@@ -108,10 +113,10 @@
     font-family: Roboto Mono, monospace;
     margin: auto;
 		padding: 1em;
-		max-width: 320px;
   
     height: 100vh;
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: space-between;
 	}
