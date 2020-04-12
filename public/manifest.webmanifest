@@ -1,0 +1,14 @@
+{
+  "short_name": "Timer",
+  "name": "Cube Timer",
+  "description": "Simple and nice rubik's/puzzle timer",
+  "icons": [
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "background_color": "#e4e4e4",
+  "display": "standalone"
+}
