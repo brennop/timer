@@ -29,7 +29,7 @@
         // stop timer
         const current = new Date();
         timer = new Date(current - startTime);
-        times = [...times, { time: timer }];
+        times = [...times, { time: timer, scramble }];
         clearTimeout(timerID);
         timerID = 0;
         precision = 2;
@@ -120,12 +120,9 @@
   }
 
   bottom {
-    max-width: 320px;
+    max-width: 420px;
     width: 100%;
     -webkit-user-select: none;
-  }
-
-  values {
     display: flex;
     justify-content: space-between;
   }
@@ -139,9 +136,6 @@
   value name {
     font-size: 1.4em;
   }
-
-  history {
-  }
 </style>
 
 <svelte:window
@@ -154,16 +148,13 @@
   <scramble>{scramble}</scramble>
   <timer class:dim={thresholdTimer}>{formatTime(timer, precision)}</timer>
   <bottom>
-    <values>
-      <value>
-        <name>PB</name>
-        {getPB(times)}
-      </value>
-      <value>
-        <name>ao5</name>
-        -
-      </value>
-    </values>
-    <history />
+    <value>
+      <name>PB</name>
+      {getPB(times)}
+    </value>
+    <value>
+      <name>ao5</name>
+      -
+    </value>
   </bottom>
 </main>
