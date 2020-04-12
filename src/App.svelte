@@ -90,7 +90,7 @@
 </script>
 
 <style>
-  * {
+  :global(*) {
     box-sizing: border-box;
   }
 
@@ -112,6 +112,7 @@
 
   timer {
     font-size: 5em;
+    -webkit-user-select: none;
   }
 
   .dim {
@@ -121,6 +122,7 @@
   bottom {
     max-width: 320px;
     width: 100%;
+    -webkit-user-select: none;
   }
 
   values {
