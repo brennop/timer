@@ -2,6 +2,12 @@
   import "typeface-roboto-mono";
   import Scrambo from "scrambo";
 
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('./sv.js')
+      .then(() => console.log("Service Worker Registered!"))
+  }
+
   const scrambo = new Scrambo();
   let scramble = scrambo.get();
 
