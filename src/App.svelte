@@ -123,9 +123,6 @@
 
 	timer {
 		font-size: 5em;
-    display: block;
-    width: 100%;
-    text-align: center;
 	}
 
   .dim {
@@ -133,6 +130,8 @@
   }
 
   bottom {
+    max-width: 320px;
+    width: 100%;
   }
 
   values {
