@@ -114,14 +114,6 @@
 </script>
 
 <style>
-  :global(*) {
-    box-sizing: border-box;
-  }
-
-  :global(body) {
-    padding: 0;
-  }
-
   main {
     font-family: Roboto Mono, monospace;
     margin: auto;
