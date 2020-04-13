@@ -71,6 +71,7 @@
     if (key === " ") {
       startTimer();
     }
+  window.times = times;
   }
 
   function handleKeyup({ key }) {
@@ -102,15 +103,16 @@
     if (times.length < n) {
       return "-";
     } else {
-      const tail = times.map(t => t.time.getMilliseconds()).slice(-n)
+      const tail = times.map(t => t.time.getTime()).slice(-n)
       const high = Math.max(...tail);
       const low = Math.min(...tail);
       const filtered = tail.filter(t => t !== high && t !== low);
-      const avg = filtered.reduce((acc, curr) => acc + curr) / n;
+      const avg = filtered.reduce((acc, curr) => acc + curr) / (n - 2);
       const ao = new Date(avg)
       return formatTime(ao, 2);
     }
   }
+
 </script>
 
 <style>
