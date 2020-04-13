@@ -71,7 +71,6 @@
     if (key === " ") {
       startTimer();
     }
-  window.times = times;
   }
 
   function handleKeyup({ key }) {
