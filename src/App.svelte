@@ -12,6 +12,7 @@
   let scramble = scrambo.get();
 
   let times = localStorage.getItem("times") || [];
+  let hidden = false;
 
   let precision = 2;
   let timerID = 0;
@@ -40,11 +41,13 @@
         timerID = 0;
         precision = 2;
         scramble = scrambo.get();
+        hidden = false;
       }
     } else {
       const now = new Date();
       if (now - thresholdTimer > threshold) {
         timer = new Date(0);
+        hidden = true;
       }
     }
   }
@@ -56,6 +59,7 @@
         precision = 1;
         thresholdTimer = 0;
         startTime = new Date();
+        hidden = true;
         runTimer();
       } else {
         thresholdTimer = 0;
@@ -156,6 +160,15 @@
   value name {
     font-size: 1.4em;
   }
+
+  .hidden {
+    transition: 0.05s ease-out;
+    opacity: 0;
+  }
+
+  scramble, bottom {
+    transition: 0.1s ease-out;
+  }
 </style>
 
 <svelte:window
@@ -165,9 +178,9 @@
   on:touchend={stopTimer} />
 
 <main>
-  <scramble>{scramble}</scramble>
+  <scramble class:hidden>{scramble}</scramble>
   <timer class:dim={thresholdTimer}>{formatTime(timer, precision)}</timer>
-  <bottom>
+  <bottom class:hidden>
     <value>
       <name>PB</name>
       {getPB(times)}
